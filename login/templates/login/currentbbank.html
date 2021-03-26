@@ -1,0 +1,30 @@
+{% extends 'login/base.html' %}
+
+{% block content %}
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-10">
+            {% comment %} {% if todos %} {% endcomment %}
+                 {% comment %} <h1>{{ todos.count }} Current Todo{{ todos.count|pluralize }}</h1> {% endcomment %}
+            {% comment %} {% else %} {% endcomment %}
+                           <h1>Active Request</h1>
+            {% comment %} {% endif %} {% endcomment %}
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-10">
+        {% comment %} {% if todos %} {% endcomment %}
+            {% comment %} <div class="list-group"> {% endcomment %}
+                {% comment %} {% for todo in todos %} {% endcomment %}
+                    {% comment %} <a href="{% url 'viewtodo' todo.id %}" class="list-group-item list-group-item-action{% if todo.important %} list-group-item-danger{% endif %}"><b>{{ todo.title }}</b>{% if todo.memo %} - {{ todo.memo|truncatechars:30 }}{% endif %}</a> {% endcomment %}
+                {% comment %} {% endfor %} {% endcomment %}
+        </div>
+        {% comment %} {% else %} {% endcomment %}
+        <div class="text-center">
+            <h2>Looks like you don't have any donation request.</h2>
+            <br>
+            {% comment %} <a role="button" class="btn btn-primary" href="{% url 'createtodo' %}">Donation</a> {% endcomment %}
+            </div>
+        {% comment %} {% endif %} {% endcomment %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends 'login/base.html' %}
+
+{% block content %}
+    <div class="row justify-content-left mt-4">
+        <div class="col-md-5">
+            <h2>Donor Registration</h2>
+        </div>
+    </div>
+    <div class="row justify-content- mt-2">
+        <div class="col-md-5">
+            {% if success %}
+                <div class="alert alert-success" role="alert">
+                    {{ success }}
+                </div>
+            {% endif %}
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="firstname">First Name: </label>
+                    <input type="text" name="firstname" class="form-control" id="firstname" placeholder="First Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last Name: </label>
+                    <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Last Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Age: </label>
+                    <select class="nav-item dropdown" name="age">
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
+                        <option value="33">33</option>
+                        <option value="34">34</option>
+                        <option value="35">35</option>
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                        <option value="46">46</option>
+                        <option value="47">47</option>
+                        <option value="48">48</option>
+                        <option value="49">49</option>
+                        <option value="50">50</option>
+                        <option value="51">51</option>
+                        <option value="52">52</option>
+                        <option value="53">53</option>
+                        <option value="54">54</option>
+                        <option value="55">55</option>
+                        <option value="56">56</option>
+                        <option value="57">57</option>
+                        <option value="58">58</option>
+                        <option value="59">59</option>
+                        <option value="60">60</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Blood Group: </label>
+                    <select class="nav-item dropdown" name="bloodgrp">
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input id="email" type="email" name="email" placeholder=" Email_Id@gmail.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile Number: </label>
+                    <input type="text" name="mobile" class="form-control" id="mobile" placeholder="+91-999-999-9999" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address: </label>
+                    <textarea name="textarea" rows="6" cols="80" placeholder=" Street City State "required></textarea>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}    
