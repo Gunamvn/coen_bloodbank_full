@@ -15,7 +15,9 @@
             {% endif %}
             <form method="POST">
                 {% csrf_token %}
-                <div class="form-group">
+
+                {{ form.as_p }}
+                {% comment %} <div class="form-group">
                     <label for="firstname">First Name: </label>
                     <input type="text" name="firstname" class="form-control" id="firstname" placeholder="First Name" required>
                 </div>
@@ -24,7 +26,7 @@
                     <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Last Name" required>
                 </div>
                 <div class="form-group">
-                    <label for="lastname">Age: </label>
+                    <label for="user_age">Age: </label>
                     <select class="nav-item dropdown" name="age">
                         <option value="18">18</option>
                         <option value="19">19</option>
@@ -112,7 +114,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="lastname">Blood Group: </label>
+                    <label for="bloodgrp">Blood Group: </label>
                     <select class="nav-item dropdown" name="bloodgrp">
                         <option value="A+">A+</option>
                         <option value="A-">A-</option>
@@ -133,9 +135,9 @@
                     <input type="text" name="mobile" class="form-control" id="mobile" placeholder="+91-999-999-9999" required>
                 </div>
                 <div class="form-group">
-                    <label for="address">Address: </label>
+                    <label for="user_address">Address: </label>
                     <textarea name="textarea" rows="6" cols="80" placeholder=" Street City State " required></textarea>
-                </div>
+                </div> {% endcomment %}
                 <br>
                 <button type="submit" class="btn btn-primary">Create Request</button>
             </form>

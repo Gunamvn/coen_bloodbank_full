@@ -3,28 +3,50 @@
 {% block content %}
     <div class="row justify-content-center mt-5">
         <div class="col-md-10">
-            {% comment %} {% if todos %} {% endcomment %}
+            {% if userrequest %}
                  {% comment %} <h1>{{ todos.count }} Current Todo{{ todos.count|pluralize }}</h1> {% endcomment %}
             {% comment %} {% else %} {% endcomment %}
                            <h1>Active Request</h1>
-            {% comment %} {% endif %} {% endcomment %}
+            {% endif %}
         </div>
     </div>
     <div class="row justify-content-center mt-5">
         <div class="col-md-10">
-        {% comment %} {% if todos %} {% endcomment %}
-            {% comment %} <div class="list-group"> {% endcomment %}
-                {% comment %} {% for todo in todos %} {% endcomment %}
-                    {% comment %} <a href="{% url 'viewtodo' todo.id %}" class="list-group-item list-group-item-action{% if todo.important %} list-group-item-danger{% endif %}"><b>{{ todo.title }}</b>{% if todo.memo %} - {{ todo.memo|truncatechars:30 }}{% endif %}</a> {% endcomment %}
-                {% comment %} {% endfor %} {% endcomment %}
+        {% if userrequest %}
+            <div class="list-group">
+                <ul>
+                    {% for userrequest in userrequest %}
+                        <li>{% if userrequest.datecompleted %} 
+                                <b>Completed on {{ userrequest.datecompleted }}: 
+                                {{ userrequest.firstname }}</b>
+                                {% if userrequest.lastname %} - 
+                                    {{ userrequest.lastname|truncatechars:30 }} - 
+                                    {{ userrequest.bloodgrp }}
+                                {% endif %}
+                            {% else %}
+                                <b>Current: 
+                                {{ userrequest.firstname }}</b>
+                                {% if userrequest.lastname %} - 
+                                    {{ userrequest.lastname|truncatechars:30 }} - 
+                                    {{ userrequest.bloodgrp }}
+                                {% endif %}
+                            {% endif %}
+                        </li>
+                    {% comment %} <a href="{% url 'viewrequest' userrequest.id %}" class="list-group-item list-group-item-action"> <b>{{ userrequest.firstname }}</b>{% if userrequest.lastname %} - {{ userrequest.lastname|truncatechars:30 }}{% endif %}</a> {% endcomment %}
+                            {% comment %} {% if todo.important %} 
+                                list-group-item-danger
+                            {% endif %} {% endcomment %}                            
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
-        {% comment %} {% else %} {% endcomment %}
+        {% else %}
         <div class="text-center">
             <h2>Looks like you don't have any donation request.</h2>
             <br>
             {% comment %} <a role="button" class="btn btn-primary" href="{% url 'createtodo' %}">Donation</a> {% endcomment %}
-            </div>
-        {% comment %} {% endif %} {% endcomment %}
+        </div>
+        {% endif %}
         </div>
     </div>
 {% endblock %}

@@ -3,6 +3,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
+from .forms import CreateForm
+from .models import bbank
 
 def homepage(request):
     return render(request, 'login/homepage.html')
@@ -23,7 +25,9 @@ def signupuser(request):
             return render(request, 'login/signupuser.html', {'form':UserCreationForm(), 'error':'Password did not match'})
 
 def currentbbank(request):
-    return render(request, 'login/currentbbank.html')
+    userrequest = bbank.objects.filter(user=request.user)
+    return render(request, 'login/currentbbank.html', {'userrequest':userrequest})
+
 
 def logoutuser(request):
     if request.method == 'POST':
@@ -42,24 +46,37 @@ def loginuser(request):
             return redirect('currentbbank')
 
 def donorreg(request):
-    return render(request, 'login/donorreg.html')
+    if request.method == 'GET':
+        return render(request, 'login/donorreg.html', {'form':AuthenticationForm()})
+    else:
+        pass
 
 def createreq(request):
-    return render(request, 'login/createreq.html')
+    if request.method == 'GET':
+        return render(request, 'login/createreq.html', {'form':CreateForm()})
+    else:
+        try:
+            form = CreateForm(request.POST)
+            newreq = form.save(commit=False)
+            newreq.user = request.user
+            newreq.save()
+            return redirect('currentbbank')
+        except ValueError:
+            return render(request, 'login/createreq.html', {'form':CreateForm(), 'error':'Incorrect data passed. Please pass the correct data'})
 
 def changepass(request): 
     if request.method == 'GET':
         return render(request, 'login/changepass.html', {'form':AuthenticationForm()})
     else:
-        user = authenticate(request, username=request.POST['username'], password=request.POST['password_old'])
-        if user is None:
+        user_changepass = authenticate(request, username=request.user, password=request.POST['password_old'])
+        if user_changepass is None:
             return render(request, 'login/changepass.html', {'form':AuthenticationForm(), 'error':'Please enter correct password'})
         else:
             if request.POST['password1'] == request.POST['password2']:
                 try:
                     # login(request, user)
-                    user.set_password('password1')
-                    user.save()
+                    user_changepass.set_password('password1')
+                    user_changepass.save()
                     return redirect('currentbbank', {'form':AuthenticationForm(), 'success':'Password has successfully changed'})    
                 except IntegrityError:
                     return render(request, 'login/signupuser.html', {'form':UserCreationForm(), 'error':'This username is already been taken please use different username'})
