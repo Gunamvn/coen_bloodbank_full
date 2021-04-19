@@ -4,7 +4,9 @@ from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
 from .forms import CreateForm
+from .forms import DonarForm
 from .models import bbank
+from .models import donarreg
 
 def homepage(request):
     return render(request, 'login/homepage.html')
@@ -47,9 +49,16 @@ def loginuser(request):
 
 def donorreg(request):
     if request.method == 'GET':
-        return render(request, 'login/donorreg.html', {'form':AuthenticationForm()})
+        return render(request, 'login/donorreg.html', {'form':DonarForm()})
     else:
-        pass
+        try:
+            dform = DonarForm(request.POST)
+            dreg = dform.save(commit=False)
+            dreg.user = request.user
+            dreg.save()
+            return redirect('currentbbank')
+        except ValueError:
+            return render(request, 'login/donorreg.html', {'form': DonarForm(), 'error': 'Incorrect data passed. Please pass the correct data'})
 
 def createreq(request):
     if request.method == 'GET':
@@ -85,3 +94,18 @@ def changepass(request):
 
 def aboutus(request):
     return render(request, 'login/aboutus.html')        
+
+def bbuser(request):
+    return render(request, 'login/bbuser.html')
+
+def bblogin(request):
+    if request.method == 'GET':
+        return render(request, 'login/bblogin.html', {'form': AuthenticationForm()})
+    else:
+        user = authenticate(
+            request, username=request.POST['username'], password=request.POST['password'])
+        if user is None:
+            return render(request, 'login/bblogin.html', {'form': AuthenticationForm(), 'error': 'Username and Password did not match'})
+        else:
+            login(request, user)
+            return redirect('bbuser')

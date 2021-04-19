@@ -31,5 +31,9 @@ urlpatterns = [
     path('donorreg/', views.donorreg, name='donorreg'),
     path('createreq/', views.createreq, name='createreq'),
     path('changepass/', views.changepass, name='changepass'),
-    path('aboutus/', views.aboutus, name='aboutus')
+    path('aboutus/', views.aboutus, name='aboutus'),
+
+    # Blood Bank user
+    path('bblogin/', views.bblogin, name='bblogin'),
+    path('bbuser/', views.bbuser, name='bbuser')
 ]

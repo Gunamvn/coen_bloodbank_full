@@ -13,32 +13,47 @@
     <div class="row justify-content-center mt-5">
         <div class="col-md-10">
         {% if userrequest %}
-            <div class="list-group">
-                <ul>
+            {% comment %} <div class="list-group"> {% endcomment %}
+                {% comment %} <ul> {% endcomment %}
                     {% for userrequest in userrequest %}
-                        <li>{% if userrequest.datecompleted %} 
-                                <b>Completed on {{ userrequest.datecompleted }}: 
-                                {{ userrequest.firstname }}</b>
-                                {% if userrequest.lastname %} - 
-                                    {{ userrequest.lastname|truncatechars:30 }} - 
-                                    {{ userrequest.bloodgrp }}
-                                {% endif %}
-                            {% else %}
-                                <b>Current: 
-                                {{ userrequest.firstname }}</b>
-                                {% if userrequest.lastname %} - 
-                                    {{ userrequest.lastname|truncatechars:30 }} - 
-                                    {{ userrequest.bloodgrp }}
-                                {% endif %}
-                            {% endif %}
-                        </li>
+                        {% if userrequest.datecompleted %}
+                            <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                                <div class="card-header">
+                                    <b>Completed on {{ userrequest.datecompleted }}</b>
+                                </div>
+                                <div class="card-body">
+                                    <b>{{ userrequest.firstname }}</b>
+                                    <p class="card-text">
+                                    {% if userrequest.lastname %} 
+                                        {{ userrequest.lastname|truncatechars:30 }} - 
+                                        {{ userrequest.bloodgrp }}
+                                    {% endif %}
+                                    </p>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                                <div class="card-header">
+                                    <b>Current</b>
+                                </div>
+                                <div class="card-body">
+                                    <b>{{ userrequest.firstname }}</b>
+                                    <p class="card-text">
+                                        {% if userrequest.lastname %}
+                                            {{ userrequest.lastname|truncatechars:30 }} - 
+                                            {{ userrequest.bloodgrp }}
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </div>
+                        {% endif %}
                     {% comment %} <a href="{% url 'viewrequest' userrequest.id %}" class="list-group-item list-group-item-action"> <b>{{ userrequest.firstname }}</b>{% if userrequest.lastname %} - {{ userrequest.lastname|truncatechars:30 }}{% endif %}</a> {% endcomment %}
                             {% comment %} {% if todo.important %} 
                                 list-group-item-danger
                             {% endif %} {% endcomment %}                            
                     {% endfor %}
-                </ul>
-            </div>
+                {% comment %} </ul> {% endcomment %}
+            {% comment %} </div> {% endcomment %}
         </div>
         {% else %}
         <div class="text-center">
