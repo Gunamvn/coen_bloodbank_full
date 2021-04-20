@@ -96,7 +96,9 @@ def aboutus(request):
     return render(request, 'login/aboutus.html')        
 
 def bbuser(request):
-    return render(request, 'login/bbuser.html')
+    userrequest = bbank.objects.all()
+    regdonar = donarreg.objects.all()
+    return render(request, 'login/bbuser.html', {'userrequest': userrequest, 'regdonar': regdonar})
 
 def bblogin(request):
     if request.method == 'GET':

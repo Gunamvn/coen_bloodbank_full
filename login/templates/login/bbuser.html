@@ -12,7 +12,7 @@
     </div >
     <div class = "row justify-content-center mt-5" >
         <div class = "col-md-10" >
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <ul class="nav nav-pills mb-4" id="pills-tab" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active" id="pills-donation-tab" data-toggle="pill" href="#pills-donation" role="tab" aria-controls="pills-donation" aria-selected="true">Donation Request</a>
                 </li>
@@ -22,231 +22,245 @@
                 <li class="nav-item">
                     <a class="nav-link" id="pills-bloodinventory-tab" data-toggle="pill" href="#pills-bloodinventory" role="tab" aria-controls="pills-bloodinventory" aria-selected="false">Blood Inventory</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-regdonar-tab" data-toggle="pill" href="#pills-regdonar" role="tab" aria-controls="pills-regdonar" aria-selected="false">Registered Donars</a>
+                </li>
             </ul>
             <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-donation" role="tabpanel" aria-labelledby="pills-donation-tab">
-                <table class="table table-striped">
-                    <thead class="thead-dark">
-                        <tr>
-                        <th scope="col">Date</th>
-                        <th scope="col">Blood Group</th>
-                        <th scope="col">Donar Name</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Phone Number</th>
-                        <th scope="col">Email ID</th>
-                        <th scope="col">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <th scope="row">17-04-2021</th>
-                        <td>A+</td>
-                        <td>Gunam</td>
-                        <td>R2-505, Alpine Eco, Bengaluru</td>
-                        <td>7406302125</td>
-                        <td>gunamvn@gmail.com</td>
-                        <td>Pending</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">17-04-2021</th>
-                        <td>AB+</td>
-                        <td>Yugam</td>
-                        <td>1-B, Maa Saraswati Apartment, Ranchi</td>
-                        <td>7406302125</td>
-                        <td>yugam99@gmail.com</td>
-                        <td>Pending</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">16-04-2021</th>
-                        <td>O+</td>
-                        <td>Nikita</td>
-                        <td>Ranchi</td>
-                        <td>xxxx-xxx-xxx</td>
-                        <td>xxxxxxxxxx@gmail.com</td>
-                        <td>Approved</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="tab-pane fade" id="pills-custrequest" role="tabpanel" aria-labelledby="pills-custrequest-tab">
-                <table class="table table-striped">
-                    <thead class="thead-dark">
-                        <tr>
-                        <th scope="col">Date</th>
-                        <th scope="col">Blood Group</th>
-                        <th scope="col">Requester Name</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Phone Number</th>
-                        <th scope="col">Email ID</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <th scope="row">17-04-2021</th>
-                        <td>A+</td>
-                        <td>Gunam</td>
-                        <td>R2-505, Alpine Eco, Bengaluru</td>
-                        <td>7406302125</td>
-                        <td>gunamvn@gmail.com</td>
-                        <td>Pending</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Approve</button>
-                            <br><br>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Cancel</button>
-                        </td>
-                        </tr>
-                        <tr>
-                        <th scope="row">17-04-2021</th>
-                        <td>AB+</td>
-                        <td>Yugam</td>
-                        <td>1-B, Maa Saraswati Apartment, Ranchi</td>
-                        <td>7406302125</td>
-                        <td>yugam99@gmail.com</td>
-                        <td>Pending</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Approve</button>
-                            <br><br>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Cancel</button>
-                        </td>
-                        </tr>
-                        <tr>
-                        <th scope="row">16-04-2021</th>
-                        <td>O+</td>
-                        <td>Nikita</td>
-                        <td>Ranchi</td>
-                        <td>xxxx-xxx-xxx</td>
-                        <td>xxxxxxxxxx@gmail.com</td>
-                        <td>Approved</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Cancel</button>
-                        </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="tab-pane fade" id="pills-bloodinventory" role="tabpanel" aria-labelledby="pills-bloodinventory-tab">
+                <div class="tab-pane fade show active" id="pills-donation" role="tabpanel" aria-labelledby="pills-donation-tab">
                     <table class="table table-striped">
-                    <thead class="thead-dark">
-                        <tr>
-                        <th scope="col">Blood Group</th>
-                        <th scope="col">Volume (litres)</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Create Request</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <th scope="row">A+</th>
-                        <td>50</td>
-                        <td>20 %</td>
-                        <td>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="model" data-target="#exampleModalCenter">
-                                Create Request
-                            </button>
+                        <thead class="thead-dark">
+                            <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Blood Group</th>
+                            <th scope="col">Donar Name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Phone Number</th>
+                            <th scope="col">Email ID</th>
+                            <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <th scope="row">17-04-2021</th>
+                            <td>A+</td>
+                            <td>Gunam</td>
+                            <td>Alpine Eco, Main Road, Ranchi</td>
+                            <td>7406302125</td>
+                            <td>gunamvn@gmail.com</td>
+                            <td>Pending</td>
+                            </tr>
+                            <tr>
+                            <th scope="row">17-04-2021</th>
+                            <td>AB+</td>
+                            <td>Raghav</td>
+                            <td>Main Road, Ranchi</td>
+                            <td>8202212225</td>
+                            <td>raghav99@gmail.com</td>
+                            <td>Pending</td>
+                            </tr>
+                            <tr>
+                            <th scope="row">16-04-2021</th>
+                            <td>O+</td>
+                            <td>Nikita</td>
+                            <td>Ranchi</td>
+                            <td>xxxx-xxx-xxx</td>
+                            <td>xxxxxxxxxx@gmail.com</td>
+                            <td>Approved</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="pills-custrequest" role="tabpanel" aria-labelledby="pills-custrequest-tab">
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Blood Group</th>
+                            <th scope="col">Requester Name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Phone Number</th>
+                            <th scope="col">Email ID</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for userrequest in userrequest %}
+                                {% if userrequest.datecompleted %}
+                                {% else %}
+                                    <tr>
+                                        <th scope="row">{{ userrequest.created }}</th>
+                                        <td>{{ userrequest.bloodgrp }}</td>
+                                        <td>
+                                            {{ userrequest.firstname }} , {{ userrequest.lastname|truncatechars:30 }}
+                                        </td>
+                                        <td>{{ userrequest.user_address }}</td>
+                                        <td>7406302125</td>
+                                        <td>{{ userrequest.email }}</td>
+                                        <td>Pending</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Approve</button>
+                                            <br><br>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Cancel</button>
+                                        </td>
+                                    </tr>
+                                {% endif %}
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="pills-bloodinventory" role="tabpanel" aria-labelledby="pills-bloodinventory-tab">
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                            <th scope="col">Blood Group</th>
+                            <th scope="col">Volume (litres)</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Create Request</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <th scope="row">A+</th>
+                            <td>50</td>
+                            <td>20 %</td>
+                            <td>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="model" data-target="#exampleModalCenter">
+                                    Create Request
+                                </button>
 
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Hello
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Hello
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            {% comment %} <button type="button" class="btn btn-primary active" data-bs-toggle="button" autocomplete="off" aria-pressed="true">Active toggle button</button> {% endcomment %}
-                            {% comment %} <button type="button" class="btn btn-primary" disabled data-bs-toggle="button" autocomplete="off">Disabled toggle button</button> {% endcomment %}
-                        </td>
-                        </tr>
-                        <tr>
-                        <th scope="row">B+</th>
-                        <td>250</td>
-                        <td>50 %</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Create Request</button>
-                        </td>
-                        </tr>
-                        <tr>
-                        <th scope="row">AB+</th>
-                        <td>250</td>
-                        <td>50 %</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Create Request</button>
-                        </td>
-                        </tr>
-                        <tr>
-                        <th scope="row">A-</th>
-                        <td>250</td>
-                        <td>50 %</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Create Request</button>
-                        </td>
-                        </tr>
-                        <tr>
-                        <th scope="row">B-</th>
-                        <td>250</td>
-                        <td>50 %</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Create Request</button>
-                        </td>
-                        </tr>
-                        <tr>
-                        <th scope="row">AB-</th>
-                        <td>250</td>
-                        <td>50 %</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Create Request</button>
-                        </td>
-                        </tr>
-                        <tr>
-                        <th scope="row">O+</th>
-                        <td>250</td>
-                        <td>50 %</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Create Request</button>
-                        </td>
-                        </tr>
-                        <tr>
-                        <th scope="row">O-</th>
-                        <td>250</td>
-                        <td>50 %</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Create Request</button>
-                            {% comment %} <button type="button" class="btn btn-primary" disabled data-bs-toggle="button" autocomplete="off">Create Request</button> {% endcomment %}
-                            {% comment %} <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Cancel Request</button> {% endcomment %}
-                        </td>
-                        </tr>
-                    </tbody>
+                                {% comment %} <button type="button" class="btn btn-primary active" data-bs-toggle="button" autocomplete="off" aria-pressed="true">Active toggle button</button> {% endcomment %}
+                                {% comment %} <button type="button" class="btn btn-primary" disabled data-bs-toggle="button" autocomplete="off">Disabled toggle button</button> {% endcomment %}
+                            </td>
+                            </tr>
+                            <tr>
+                            <th scope="row">B+</th>
+                            <td>250</td>
+                            <td>50 %</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Create Request</button>
+                            </td>
+                            </tr>
+                            <tr>
+                            <th scope="row">AB+</th>
+                            <td>250</td>
+                            <td>50 %</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Create Request</button>
+                            </td>
+                            </tr>
+                            <tr>
+                            <th scope="row">A-</th>
+                            <td>250</td>
+                            <td>50 %</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Create Request</button>
+                            </td>
+                            </tr>
+                            <tr>
+                            <th scope="row">B-</th>
+                            <td>250</td>
+                            <td>50 %</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Create Request</button>
+                            </td>
+                            </tr>
+                            <tr>
+                            <th scope="row">AB-</th>
+                            <td>250</td>
+                            <td>50 %</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Create Request</button>
+                            </td>
+                            </tr>
+                            <tr>
+                            <th scope="row">O+</th>
+                            <td>250</td>
+                            <td>50 %</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Create Request</button>
+                            </td>
+                            </tr>
+                            <tr>
+                            <th scope="row">O-</th>
+                            <td>250</td>
+                            <td>50 %</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Create Request</button>
+                                {% comment %} <button type="button" class="btn btn-primary" disabled data-bs-toggle="button" autocomplete="off">Create Request</button> {% endcomment %}
+                                {% comment %} <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Cancel Request</button> {% endcomment %}
+                            </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade"  id="pills-regdonar" role="tabpanel" aria-labelledby="pills-regdonar-tab">
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Blood Group</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Phone Number</th>
+                                <th scope="col">Email ID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for regdonar in regdonar %}
+                                {% if regdonar.datecompleted %}
+                                {% else %}
+                                    <tr>
+                                        <th scope="row">{{ regdonar.bloodgrp }}</th>
+                                        <td>{{ regdonar.firstname }}</td>
+                                        <td>{{ regdonar.lastname }}</td>
+                                        <td>{{ regdonar.user_address }}</td>
+                                        <td>7406302125</td>
+                                        <td>{{ regdonar.email }}</td>
+                                    </tr>
+                                {% endif %}
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-        {% if userrequest %}
+        {% comment %} {% if userrequest %}
             <div class = "list-group" >
                 <ul>
                     {% for userrequest in userrequest %}
                         <li>
-                        </li>
+                        </li> {% endcomment %}
                     {% comment %} <a href="{% url 'viewrequest' userrequest.id %}" class="list-group-item list-group-item-action"> <b>{{ userrequest.firstname }}</b>{% if userrequest.lastname %} - {{ userrequest.lastname|truncatechars:30 }}{% endif %}</a> {% endcomment %}
                             {% comment %} {% if todo.important %} 
                                 list-group-item-danger
                             {% endif %} {% endcomment %}                            
-                    {% endfor %}
+                    {% comment %} {% endfor %}
                 </ul>
-            </div>
-        </div>
-        {% endif %}
+            </div> {% endcomment %}
+        {% comment %} </div> {% endcomment %}
+        {% comment %} {% endif %} {% endcomment %}
         </div>
     </div>
 {% endblock %}
